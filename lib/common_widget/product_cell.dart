@@ -6,7 +6,11 @@ class ProductCell extends StatelessWidget {
   final VoidCallback onPressed;
   final VoidCallback onCart;
 
-  const ProductCell({super.key, required this.pObj, required this.onPressed , required this.onCart});
+  const ProductCell(
+      {super.key,
+      required this.pObj,
+      required this.onPressed,
+      required this.onCart});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +22,8 @@ class ProductCell extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           color: Colors.white,
-          border:
-              Border.all(color: TColor.placeholder.withOpacity(0.5), width: 1),
+          border: Border.all(
+              color: TColor.placeholder.withValues(alpha: .5), width: 1),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Column(
@@ -32,7 +36,7 @@ class ProductCell extends StatelessWidget {
                     width: 80, height: 90, fit: BoxFit.contain),
               ],
             ),
-             const Spacer(),
+            const Spacer(),
             Text(
               pObj["name"],
               style: TextStyle(
@@ -52,32 +56,28 @@ class ProductCell extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  pObj["Price"],
+                  pObj["price"],
                   style: TextStyle(
                       color: TColor.primaryText,
                       fontSize: 18,
                       fontWeight: FontWeight.w600),
                 ),
-
                 InkWell(
                   onTap: onCart,
                   child: Container(
-                    width: 40,
-                    height: 40,
-       
-        decoration: BoxDecoration(
-          color:TColor.primary,
-          border:
-              Border.all(color: TColor.placeholder.withOpacity(0.5), width: 1),
-          borderRadius: BorderRadius.circular(15),
-
-                  ),
-                   alignment: Alignment.center,
-                   child: Image.asset("" , width:10 , height: 10),
-
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: TColor.primary,
+                        border: Border.all(
+                            color: TColor.placeholder.withValues(alpha: .5),
+                            width: 1),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      alignment: Alignment.center,
+                      child: IconButton(
+                          onPressed: () {}, icon: const Icon(Icons.add))),
                 ),
-                ),
-
               ],
             )
           ],

@@ -145,8 +145,8 @@ class _HomeViewState extends State<HomeView> {
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       itemCount: exclusiveOfferArr.length,
                       itemBuilder: (context, index) {
-                        var pObj = exclusiveOfferArr[index] ;
-                         print('Item at index $index: $pObj');
+                        var pObj = exclusiveOfferArr[index];
+                        print('Item at index $index: $pObj');
                         return ProductCell(
                           pObj: pObj,
                           onPressed: () {},
@@ -162,18 +162,19 @@ class _HomeViewState extends State<HomeView> {
                 SizedBox(
                   height: 250,
                   child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      itemCount: bestSellingArr.length,
-                      itemBuilder: (context, index) {
-                        var pObj = bestSellingArr[index];
-                        print('Item at index $index: $pObj');
-                        return ProductCell(
-                          pObj: pObj,
-                          onPressed: () {},
-                          onCart: () {},
-                        );
-                      }),
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    itemCount: bestSellingArr.length,
+                    itemBuilder: (context, index) {
+                      var pObj = bestSellingArr[index];
+                      print('Item at index $index: $pObj');
+                      return ProductCell(
+                        pObj: pObj,
+                        onPressed: () {},
+                        onCart: () {},
+                      );
+                    },
+                  ),
                 )
               ],
             ),
